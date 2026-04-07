@@ -1,0 +1,135 @@
+/* นำเข้าฟอนต์ Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap");
+
+body {
+  font-family: "Kanit", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ); /* พื้นหลังไล่เฉดสี */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #2d3436;
+}
+
+.game-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 380px;
+  backdrop-filter: blur(10px); /* เอฟเฟกต์กระจกฝ้า */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: 600;
+  color: #4834d4;
+  letter-spacing: 1px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: #f1f2f6;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#timer {
+  color: #eb4d4b; /* เน้นตัวเลขเวลาด้วยสีแดง */
+}
+
+#score {
+  color: #6ab04c; /* เน้นคะแนนด้วยสีเขียว */
+}
+
+.question {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 30px 0;
+  color: #2d3436;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.choices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.choice-btn {
+  padding: 18px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: #fff;
+  border: 2px solid #edeff2;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #4834d4;
+}
+
+/* เอฟเฟกต์ตอน Hover ปุ่มตัวเลือก */
+.choice-btn:hover {
+  background-color: #4834d4;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(72, 52, 212, 0.3);
+  border-color: #4834d4;
+}
+
+.choice-btn:active {
+  transform: translateY(0);
+}
+
+/* ปุ่มเริ่มเกม / เล่นใหม่ */
+#start-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #4834d4, #686de0);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  box-shadow: 0 10px 20px rgba(72, 52, 212, 0.2);
+}
+
+#start-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* ใส่ Animation ตอนจบเกม */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.game-over {
+  color: #eb4d4b;
+  animation: shake 0.4s ease-in-out;
+}
